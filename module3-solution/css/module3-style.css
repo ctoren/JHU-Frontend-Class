@@ -1,0 +1,95 @@
+.col1 {
+  background-color:#939393;
+  float: left;
+  text-align: center;
+
+}
+
+.words{
+  text-align: left;
+
+}
+.col2 {
+  background-color:#939393;
+  float: left;
+  text-align: center;
+
+}
+.col3 {
+  background-color: #939393;
+  float: left;
+  text-align: center;
+
+}
+
+.box{
+  box-model: border-box;
+  border: 3px solid transparent;
+  background-clip:padding-box;
+  height: 700px;
+  width: 28%;
+  margin-bottom: 15px;
+  margin-left: 50px;
+  position: relative;
+  overflow: hidden;
+}
+.bod {
+  font-family: Comic Sans MS;
+  color: black;
+}
+.titles {
+  text-align: center;
+}
+.navbar {
+  background-color: #939393;
+  border: 2px solid;
+  border-color: black;
+  border-radius: 0px;
+  border-radius: 0;
+  vertical-align: top;
+  color: black;
+  width: 100%;
+}
+.navbar-left {
+  margin-left: 0px;
+  margin-top: 5px;
+}
+.navbar .navbar-collapse {
+  text-align: center;
+  color: black;
+}
+.navbar-right {
+  background-color: white;
+  color: black;
+}
+
+@media (min-width: 992px) and (max-width: 1920px) {
+ .navbar-right{
+   display: none;
+ }
+
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .col1 {
+    width: 35%
+  }
+  .col2 {
+    width: 35%
+  }
+ .col3 {
+   width: 75%
+ }
+ .navbar-right{
+   display: none;
+ }
+}
+
+@media screen and (max-width: 768px) {
+  .box {
+    width: 50%;
+}
+ .navbar-left{
+   display: none;
+ }
+}

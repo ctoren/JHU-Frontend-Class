@@ -1,0 +1,171 @@
+
+.titles {
+  text-align: center;
+}
+.categors {
+  text-align: left;
+  float: left;
+  font-family: cursive;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.box {
+  background-color: gray;
+  width: 375px;
+  height: 175px;
+  border: 1px solid black;
+  margin-bottom: 15px;
+  float: left;
+  overflow: scroll;
+
+}
+
+.sm-box {
+  background-color: pink;
+  width: 100px;
+  height: 25px;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  float: right;
+  margin-top: 0px;
+  margin-right: 0px;
+}
+.sm-box2 {
+  background-color: IndianRed;
+  width: 100px;
+  height: 25px;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  float: right;
+  margin-top: 0px;
+  margin-right: 0px;
+  color: white;
+}
+.sm-box3 {
+  background-color: #F3DE96;
+  width: 100px;
+  height: 25px;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  float: right;
+  margin-top: 0px;
+  margin-right: 0px;
+  color: black;
+
+}
+.beef-bx {
+margin-left: 30px;
+
+}
+.p1{
+  margin-top:1px;
+  text-align: center;
+  font-size: 15px;
+
+}
+.plong, .plong2, .plong3{
+  margin-top:1px;
+  text-align: center;
+  font-size: 25px;
+
+}
+
+.p2 {
+  margin-top:1px;
+  text-align:center;
+  font-size: 15px;
+}
+.words {
+  margin-left: 10px;
+  margin-top: 35px;
+  font-size: 15px;
+}
+.sushi-bx {
+margin-left: 15px;
+}
+.p3 {
+  margin-top:1px;
+  text-align:center;
+  font-size: 15px;
+}
+.words2, .words3 {
+  margin-left: 10px;
+  margin-top: 30px;
+  font-size: 15px
+}
+
+.bod {
+  font-family: Comic Sans MS;
+}
+
+.h1{
+  font-size: 35px;
+}
+.lng-box, .lng-box2, .lng-box3 {
+  background-color: pink;
+  width: 500px;
+  height: 85px;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  float: right;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 5px;
+}
+.lng-box {
+  background-color: pink;
+  width: 500px;
+  height: 85px;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  float: right;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 10px;
+}
+
+
+@media (min-width: 992px) and (max-width: 1920px) {
+  .box{
+    float: left;
+  }
+  .categors {
+    display: none;
+  }
+  .lng-box, .lng-box2, .lng-box3 {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .sushi-bx {
+    width: 80%;
+  }
+  .categors {
+    display: none;
+  }
+  .lng-box, .lng-box2, .lng-box3 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .box {
+    width: 70%;
+  }
+ .titles {
+   display: none;
+ }
+ .categors {
+   display: block;
+ }
+ .lng-box {
+   display: block;
+ }
+ .sm-box, .sm-box2, .sm-box3 {
+   display: none;
+ }
+}
