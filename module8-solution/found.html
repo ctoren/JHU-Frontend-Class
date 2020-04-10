@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en" ng-app='NarrowItDownApp'>
+  <head>
+    <title>Narrow Down Your Menu Choice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+  </head>
+
+<body>
+
+<ol>
+  <li ng-repeat="item in list.items">
+    {{ item.name }}, {{ item.shortName }}, {{ item.description }}
+    <button ng-click="list.onRemove({index: $index});">Don't Want This One!</button>
+  </li>
+</ol>
+<div class="empty" ng-if="list.items.length == 0">Item Not Found</div>
+
+</body>
+</html>
