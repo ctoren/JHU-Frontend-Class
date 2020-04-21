@@ -53,10 +53,10 @@ function MenuSearchService($http) {
 
        var menuItems = result.data["menu_items"];
 
-       for(var i = 0; i < menuItems.length; i++) {
-         if(menuItems[i].description.includes(searchTerm))
+       for(var i = 0; i < items.length; i++) {
+         if(items[i].description.includes(searchTerm))
          {
-           foundItems.push(menuItems[i]);
+           foundItems.push(items[i]);
          }
        }
        return foundItems;
