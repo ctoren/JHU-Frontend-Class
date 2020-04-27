@@ -1,16 +1,13 @@
 (function () {
- 'use strict';
+'use strict';
 
-angular.module('MenuApp',['ui.router', data]);
-.config(RoutesConfig);
+angular.module('MenuApp', ['ui.router', 'data'])
+.config(config);
 
-RoutesConfig.$inject = ['$urlRouterProvider'];
-function RoutesConfig($urlRouterProvider) {
+config.$inject = ['$urlRouterProvider'];
+function config($urlRouterProvider) {
 
-  // Redirect to tab 1 if no other URL matches
   $urlRouterProvider.otherwise('/');
-
 }
-
 
 })();
