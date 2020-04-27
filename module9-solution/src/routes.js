@@ -2,36 +2,40 @@
 'use strict';
 
 angular.module('MenuApp')
-.config(route);
+.config(routeConfig);
 
-route.$inject = ['$state'];
-function route ($state) {
-$state
-  .state('home', {
-    url:'/',
-    templateUrl: 'home.template.html'
+/**
+ * Configures the routes and views
+ */
+routeConfig.$inject = ['$stateProvider'];
+function routeConfig ($stateProvider) {
+  // Routes
+  $stateProvider
+    .state('home', {
+      url: '/',
+      templateUrl: 'src/templates/home.template.html'
     })
     .state('categories', {
-     url: '/categories',
-     templateUrl: 'categories.template.html,
-     controller: 'CategoriesController',
-     controllerAs: 'ctrl',
-     resolve: {
-     categories: ['MenuDataService', function(MenuDataService) {
-     return MenuDataService.getCategories();
-     }]
-     }
-     })
-     .state('items', {
-     url: '/items/{category}',
-     templateUrl: 'items.template.html',
-     controller: "ItemsController',
-     controllerAs: 'itemsCtrl',
-     resolve: {
-     items: ['$statePms', 'MenuDataService', function($statePms, MenuDataService){
-     return MenuDataService.getItemsForCategory($statePms.category);
-     }]
-     }
-     });
-     }
-     })();
+      url: '/categories',
+      templateUrl: 'src/templates/categories.template.html',
+      controller: 'CategoriesController',
+      controllerAs: 'ctrl',
+      resolve: {
+        categories: ['MenuDataService', function (MenuDataService) {
+          return MenuDataService.getCategories();
+        }]
+      }
+    })
+    .state('items', {
+      url: '/items/{category}',
+      templateUrl: 'src/templates/items.template.html',
+      controller: 'ItemsController',
+      controllerAs: 'itemsCtrl',
+      resolve: {
+        items: ['$stateParams','MenuDataService', function ($stateParams, MenuDataService) {
+          return MenuDataService.getItemsForCategory($stateParams.category);
+        }]
+      }
+    });
+}
+})();
