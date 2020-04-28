@@ -9,4 +9,12 @@ angular.module('MenuApp')
     items: '<'
   }
 });
+  
+
+  ItemsController.$inject = ['items'];
+function ItemsController (items) {
+  var $itemsCtrl = this;
+  $itemsCtrl.items = items;
+}
+})();
 
