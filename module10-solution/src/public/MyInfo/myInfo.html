@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My Info</title>
+  </head>
+  <body>
+    <h1>My Info:</h1>
+    
+ <span ng-if="!ctrl.info.firstName">Please Sign Up<a href="#" ui-sref="public.signup">Sign Up for Newsletter</a></span>
+
+<div ng-if="ctrl.info.firstName">
+<h4>Your First Name:</h4>{{ctrl.info.firstName}}
+<h4>Your Last Name:</h4>{{ctrl.info.lastName}}
+<h4>Your Email Address:</h4>{{ctrl.info.email}}
+<h4>Your Phone Number:</h4>{{ctrl.info.phone}}
+<h4>Your Favorite Dish:</h4>{{ctrl.info.faveMenuNum}}
+<img class="img-responsive" ng-src="https://jstiling-course5.herokuapp.com/images/{{ctrl.info.favMenuNum}}.jpg" alt="{{ctrl.info.favMenuNum}}">
+</div>
+</body>
+</html>
