@@ -1,38 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sign Up Form</title>
-    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/restaurant.css">
-    <link rel="stylesheet" href="css/common.css">
-  </head>
-  <body>
-  <h1>Please Sign Up</h1>
-  
-  <form name="signup" novalidate>
-  First Name: <input type="text" ng-model="ctrl.firstName" name="firstName" required/>
-  <span ng-if=
-  
-  Last Name: <input type="text" ng-model="ctrl.lasttName" name="lasttName" required/>
-  <span ng-if=
-  
-  Email Address: <input type="text" ng-model="ctrl.email" name="email" required/>
-  <span ng-if=
-  
-  Phone Number: <input type="text" ng-model="ctrl.phone" name="phone" required/>
-  <span ng-if=
-  
-  Favorite Menu Item #: <input type="text" ng-model="ctrl.faveMenuNum" name="faveMenuNum" required/>
-  <span ng-if=
-  
-  <button class="btn btn-primary" ng-click="ctrl.submit()" ng-disabled="signup.$invalid">Submit</button>
-  <span ng-if="ctrl.doesNotExist"
-  <span ng-if="ctrl.doesExist">
-  </form>
-  </body>
-  </html>
+<div style="padding: 20px">
+	
+<h1>Sign Up</h1>
+
+<form name="signupForm" novalidate>
+
+First name: <input style="color: black;" type="text" ng-model="ctrl.firstName" name="firstName" required/><br><br>
+<span ng-if="signupForm.firstName.$error.required && signupForm.firstName.$touched">*First name is required.</span><br><br>
+Last name:  <input style="color: black;" type="text" ng-model="ctrl.lastName" name="lastName"  required/><br><br>
+<span ng-if="signupForm.lastName.$error.required && signupForm.lastName.$touched">*Last name is required.</span><br><br>
+Email Address: <input style="color: black;" type="email" ng-model="ctrl.email" name="email" required/><br><br>
+<span ng-if="signupForm.email.$invalid && signupForm.email.$touched">*Email not in correct format.</span><br><br>
+<span ng-if="signupForm.email.$error.required && signupForm.email.$touched">*Email is required.</span><br><br>
+Phone Number:  <input style="color: black;" type="number" ng-model="ctrl.phoneNum" name="phoneNum" required/><br><br>
+<span ng-if="signupForm.phoneNum.$error.required && signupForm.phoneNum.$touched">*Phone number is required.</span><br><br>
+Favorite Menu Number:  <input style="color: black;" type="text" ng-model="ctrl.favMenuNum" name="favMenuNum"  ng-change="ctrl.favNumChanged(ctrl.favMenuNum)" required/><br><br>
+<span ng-if="signupForm.favMenuNum.$error.required && signupForm.favMenuNum.$touched">*Favorite Menu Number is required.</span><br><br>
+
+
+<button class="btn btn-primary" ng-click="ctrl.submit()" ng-disabled="signupForm.$invalid">Submit</button><br><br>
+<span ng-if="ctrl.doesNotExist">No such menu number exists.</span>
+<span ng-if="ctrl.successfulSubmit">Your information has been saved.</span>
+</form>
+
+</div>
