@@ -11,8 +11,8 @@ angular.module('public')
 });
 
 
-InfoController.$inject = ['info'];
-function InfoController (info) {
+MyInfoController.$inject = ['info'];
+function MyInfoController (info) {
   var ctrl = this;
   ctrl.info = info;
 }
