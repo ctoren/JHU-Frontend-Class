@@ -4,7 +4,7 @@
 angular.module('public')
 .controller('MyInfoController', MyInfoController)
 .component('info', {
-  template: 'templates/MyInfo/myInfo.html',
+  template: 'templates/myInfo.html',
    bindings: {
     info: '<'
   }
