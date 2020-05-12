@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sign Up Form</title>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/restaurant.css">
+    <link rel="stylesheet" href="css/common.css">
+  </head>
+  <body>
+  <h1>Please Sign Up</h1>
+  
+  <form name="signup" novalidate>
+  First Name: <input type="text" ng-model="ctrl.firstName" name="firstName" required/>
+  <span ng-if=
+  
+  Last Name: <input type="text" ng-model="ctrl.lasttName" name="lasttName" required/>
+  <span ng-if=
+  
+  Email Address: <input type="text" ng-model="ctrl.email" name="email" required/>
+  <span ng-if=
+  
+  Phone Number: <input type="text" ng-model="ctrl.phone" name="phone" required/>
+  <span ng-if=
+  
+  Favorite Menu Item #: <input type="text" ng-model="ctrl.faveMenuNum" name="faveMenuNum" required/>
+  <span ng-if=
+  
+  <button class="btn btn-primary" ng-click="ctrl.submit()" ng-disabled="signup.$invalid">Submit</button>
+  <span ng-if="ctrl.doesNotExist"
+  <span ng-if="ctrl.doesExist">
+  </form>
+  </body>
+  </html>
