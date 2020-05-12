@@ -4,9 +4,10 @@
 angular.module('public')
 .controller('SignUpController', SignUpController);
 
-SignUpController.$inject = ['$scope', '$http', MyInfoService, MenuService) {
+SignUpController.$inject = ['$scope', '$http', MyInfoService, MenuService];
+function SignUpController($scope, $http, MyInfoService, MenuService) {
 var ctrl = this;
-ctr.firstName = ""; ctrl.lastName = ""; ctrl.email = ""; ctrl.phone = ""; ctrl.faveMenuNum = "";
+ctrl.firstName = ""; ctrl.lastName = ""; ctrl.email = ""; ctrl.phone = ""; ctrl.faveMenuNum = "";
 ctrl.returnedItem;
 ctrl.doesExist = false;
 ctrl.doesNotExist = false;
