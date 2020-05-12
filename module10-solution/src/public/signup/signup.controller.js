@@ -2,42 +2,56 @@
 "use strict";
 
 angular.module('public')
-.controller('SignUpController', SignUpController);
+.controller('SignupController', SignupController);
 
-SignUpController.$inject = ['$scope', '$http', MyInfoService, MenuService];
-function SignUpController($scope, $http, MyInfoService, MenuService) {
-var ctrl = this;
-ctrl.firstName = ""; ctrl.lastName = ""; ctrl.email = ""; ctrl.phone = ""; ctrl.faveMenuNum = "";
-ctrl.returnedItem;
-ctrl.doesExist = false;
-ctrl.doesNotExist = false;
+SignupController.$inject = ['$scope', '$http', 'InfoService', 'MenuService'];
+function SignupController($scope, $http, InfoService, MenuService) {
+  var ctrl = this;
 
-ctrl.faveNumNew = function(faveMenuNum){
-    var promise = MenuService.getMenuItem(faveMenuNum);
+  ctrl.firstName = "";
+  ctrl.lastName = "";
+  ctrl.email = "";
+  ctrl.phoneNum = "";
+  ctrl.favMenuNum = "";
+  ctrl.returnedItem;
+  ctrl.successfulSubmit = false;
+  ctrl.doesNotExist = false;
+
+  ctrl.favNumChanged = function(favMenuNum){
+
+    var promise = MenuService.getMenuItem(favMenuNum);
     promise.then(function(response) {
-       ctrl.doesNotExist = false; })
-       .catch() {
-       ctrl.doesNotExist = true; }
-       }
-       
-ctrl.submit = function(){
-   var promise = MenuService.getMenuItem(ctrl.faveMenuNum);
-   promise.then(function(response) {
+
+      ctrl.doesNotExist = false;
+    })
+    .catch()
+    {
+        ctrl.doesNotExist = true;
+    }
+  }
+
+  ctrl.submit = function(){
+
+    var promise = MenuService.getMenuItem(ctrl.favMenuNum);
+    promise.then(function(response) {
+
       ctrl.returnedItem = response;
-      
-   var infoSaved = MyInfoService.saveMyInfo(ctrl.firstName, 
-                                            ctrl.lastName, 
-                                            ctrl.email, 
-                                            ctrl.phone, 
-                                            ctrl.faveMenuNum, 
-                                            ctrl.returnedItem);
-   if(infoSaved != null){
-   ctrl.doesExist = true;
-   ctrl.doesNotExist = false; } })
-   .catch() {
-   ctrl.doesNotExist = true;
-   ctrl.doesExist = false; }
-   }
-   }
-   })();
-   
+
+      var saved = InfoService.saveInfo(ctrl.firstName, ctrl.lastName, ctrl.email, ctrl.phoneNum, ctrl.favMenuNum, ctrl.returnedItem);
+
+      if(saved != null)
+      {
+        ctrl.successfulSubmit = true;
+        ctrl.doesNotExist = false;
+      }
+
+    })
+    .catch()
+    {
+        ctrl.doesNotExist = true;
+        ctrl.successfulSubmit = false;
+    }
+  }
+}
+
+})();
