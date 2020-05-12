@@ -22,7 +22,7 @@
   <span ng-if="signup.lastName.$error.required && signup.lastName.$touched">*Last name is required.</span>
   
   Email Address: <input type="text" style="color:black" ng-model="ctrl.email" name="email" required/>
- <span ng-if="signupForm.email.$invalid && signupForm.email.$touched">*Email not in correct format.</span>
+ <span ng-if="signup.email.$invalid && signup.email.$touched">*Email not in correct format.</span>
 <span ng-if="signup.email.$error.required && signup.email.$touched">*Email is required.</span>
   
   Phone Number: <input type="text" style="color:black" ng-model="ctrl.phone" name="phone" required/>
