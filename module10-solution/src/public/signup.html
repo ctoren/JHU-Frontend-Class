@@ -16,20 +16,20 @@
   
   <form name="signup" novalidate>
   First Name: <input type="text" style="color:black" ng-model="ctrl.firstName" name="firstName" required/>
-  <span ng-if="signup.firstName.$error.required && signup.firstName.$touched">*First name is required.</span>
+  <span ng-if="signup.firstName.$error.required && signup.firstName.$touched">First name is required.</span>
   
   Last Name: <input type="text" style="color:black" ng-model="ctrl.lasttName" name="lasttName" required/>
-  <span ng-if="signup.lastName.$error.required && signup.lastName.$touched">*Last name is required.</span>
+  <span ng-if="signup.lastName.$error.required && signup.lastName.$touched">Last name is required.</span>
   
   Email Address: <input type="text" style="color:black" ng-model="ctrl.email" name="email" required/>
- <span ng-if="signup.email.$invalid && signup.email.$touched">*Email not in correct format.</span>
-<span ng-if="signup.email.$error.required && signup.email.$touched">*Email is required.</span>
+ <span ng-if="signup.email.$invalid && signup.email.$touched">Email not in correct format.</span>
+<span ng-if="signup.email.$error.required && signup.email.$touched">Email is required.</span>
   
   Phone Number: <input type="text" style="color:black" ng-model="ctrl.phone" name="phone" required/>
-  <span ng-if="signup.phoneNum.$error.required && signup.phoneNum.$touched">*Phone number is required.</span>
+  <span ng-if="signup.phone.$error.required && signup.phone.$touched">Phone number is required.</span>
   
   Favorite Menu Item #: <input type="text" style="color:black" ng-model="ctrl.faveMenuNum" name="faveMenuNum" ng-change="ctrl.faveNumNew(ctrl.faveMenuNum)" required/>
-  <span ng-if="signup.favMenuNum.$error.required && signup.favMenuNum.$touched">*Favorite Menu Number is required.</span>
+  <span ng-if="signup.favMenuNum.$error.required && signup.favMenuNum.$touched">Favorite Menu Number is required.</span>
   
   <button class="btn btn-primary" ng-click="ctrl.submit()" ng-disabled="signup.$invalid">Submit</button>
   <span ng-if="ctrl.doesNotExist">Wrong menu numer</span>
