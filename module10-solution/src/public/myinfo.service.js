@@ -21,7 +21,7 @@ function MyInfoService($http) {
     }
   };
 
-  service.getInfo = function(){
+  myService.getInfo = function(){
 
     if(myService.input){
       return myService.input;
