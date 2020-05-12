@@ -2,48 +2,31 @@
 "use strict";
 
 angular.module('public')
-.service('InfoService', InfoService);
+.service('MyInfoService', MyInfoService);
 
 
-InfoService.$inject = ['$http'];
-function InfoService($http) {
-  var service = this;
+MyInfoService.$inject = ['$http'];
+function MyInfoService($http) {
+  var myService = this;
 
-  service.infoObject = {};
+  myService.input = {};
 
-  service.saveInfo = function (firstName, lastName, email, phoneNum, favMenuNum, returnedItem) {
+  myService.infoSaved = function(firstName, lastName, email, phone, faveMenuNum, returnedItem){
 
-    try
-    {
-      service.infoObject.firstName = firstName;
-      service.infoObject.lastName = lastName;
-      service.infoObject.email = email;
-      service.infoObject.phoneNum = phoneNum;
-      service.infoObject.favMenuNum = favMenuNum;
-      service.infoObject.returnedItem = returnedItem;
-
-      return service.infoObject;
-    }
-    catch(error)
-    {
+    try{
+      myService.input.firstName = firstName; myService.input.lastName = lastName; myService.input.email = email; myService.input.phoneNum = phone; myService.input.favMenuNum = faveMenuNum; myService.input.returnedItem = returnedItem;
+      return myService.input;}
+    catch(error){
         return null;
     }
-   
   };
 
-  service.getInfo = function () {
+  service.getInfo = function(){
 
-    if(service.infoObject)
-    {
-      return service.infoObject;
-    }
-    else
-    {
-      return null;
-    }
-   
+    if(myService.input){
+      return myService.input;
+    } else {
+      return null; }
   };
-
-    
 }
 })();
