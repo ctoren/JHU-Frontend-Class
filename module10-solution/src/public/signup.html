@@ -32,8 +32,8 @@
   <span ng-if="signup.favMenuNum.$error.required && signup.favMenuNum.$touched">*Favorite Menu Number is required.</span>
   
   <button class="btn btn-primary" ng-click="ctrl.submit()" ng-disabled="signup.$invalid">Submit</button>
-  <span ng-if="ctrl.doesNotExist"
-  <span ng-if="ctrl.doesExist">
+  <span ng-if="ctrl.doesNotExist">Wrong menu numer</span>
+   <span ng-if="ctrl.doesExist">Your info is saved</span>
   </form>
   </body>
   </html>
