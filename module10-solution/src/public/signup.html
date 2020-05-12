@@ -28,7 +28,7 @@
   Phone Number: <input type="text" style="color:black" ng-model="ctrl.phone" name="phone" required/>
   <span ng-if="signup.phoneNum.$error.required && signup.phoneNum.$touched">*Phone number is required.</span>
   
-  Favorite Menu Item #: <input type="text" style="color:black" ng-model="ctrl.faveMenuNum" name="faveMenuNum" required/>
+  Favorite Menu Item #: <input type="text" style="color:black" ng-model="ctrl.faveMenuNum" name="faveMenuNum" ng-change="ctrl.faveNumChanged(ctrl.faveMenuNum)" required/>
   <span ng-if="signup.favMenuNum.$error.required && signup.favMenuNum.$touched">*Favorite Menu Number is required.</span>
   
   <button class="btn btn-primary" ng-click="ctrl.submit()" ng-disabled="signup.$invalid">Submit</button>
