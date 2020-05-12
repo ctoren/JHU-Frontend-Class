@@ -1,0 +1,18 @@
+<div style="padding: 20px">
+
+	<h1>My Info</h1>
+
+<span ng-if="!ctrl.info.firstName">Not Signed Up Yet. <a href="#" ui-sref="public.signup">Sign up Now!</a></span>
+
+<div ng-if="ctrl.info.firstName">
+	<strong>First name: </strong>{{ctrl.info.firstName}}<br><br>
+	<strong>Last name: </strong>{{ctrl.info.lastName}}<br><br>
+	<strong>Email: </strong>{{ctrl.info.email}}<br><br>
+	<strong>Phone number: </strong>{{ctrl.info.phoneNum}}<br><br>
+	<strong>Favorite Menu Item: </strong> {{ctrl.info.favMenuNum}}<br><br>
+	{{ctrl.info.returnedItem.name}}<br><br>{{ctrl.info.returnedItem.description}}
+	<img class="img-responsive" width="250" height="150" ng-src="https://jstiling-course5.herokuapp.com/images/{{ctrl.info.favMenuNum}}.jpg" alt="{{ctrl.info.favMenuNum}}">
+</div>
+
+
+</div>
