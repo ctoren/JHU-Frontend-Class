@@ -16,19 +16,20 @@
   
   <form name="signup" novalidate>
   First Name: <input type="text" ng-model="ctrl.firstName" name="firstName" required/>
-  <span ng-if=
+  <span ng-if="signupForm.firstName.$error.required && signupForm.firstName.$touched">*First name is required.</span>
   
   Last Name: <input type="text" ng-model="ctrl.lasttName" name="lasttName" required/>
-  <span ng-if=
+  <span ng-if="signupForm.lastName.$error.required && signupForm.lastName.$touched">*Last name is required.</span>
   
   Email Address: <input type="text" ng-model="ctrl.email" name="email" required/>
-  <span ng-if=
+ <span ng-if="signupForm.email.$invalid && signupForm.email.$touched">*Email not in correct format.</span>
+<span ng-if="signupForm.email.$error.required && signupForm.email.$touched">*Email is required.</span>
   
   Phone Number: <input type="text" ng-model="ctrl.phone" name="phone" required/>
-  <span ng-if=
+  <span ng-if="signupForm.phoneNum.$error.required && signupForm.phoneNum.$touched">*Phone number is required.</span>
   
   Favorite Menu Item #: <input type="text" ng-model="ctrl.faveMenuNum" name="faveMenuNum" required/>
-  <span ng-if=
+  <span ng-if="signupForm.favMenuNum.$error.required && signupForm.favMenuNum.$touched">*Favorite Menu Number is required.</span>
   
   <button class="btn btn-primary" ng-click="ctrl.submit()" ng-disabled="signup.$invalid">Submit</button>
   <span ng-if="ctrl.doesNotExist"
